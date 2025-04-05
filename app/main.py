@@ -80,9 +80,6 @@ async def chat_with_mistral(journey: JourneyCreate, db: Session = Depends(get_db
         ai_response = chat_response.choices[0].message.content
 
         # Enregistrement dans la base de données
-        
-
-
         new_journey = Journey(
             id=str(uuid.uuid4()),  # Génération d'un UUID unique
             name=journey.name,
