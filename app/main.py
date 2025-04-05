@@ -6,6 +6,7 @@ from sqlalchemy.orm import sessionmaker, Session
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from mistralai import Mistral
+from typing import Optional
 import os
 import uuid
 
