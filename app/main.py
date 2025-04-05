@@ -41,13 +41,10 @@ Base.metadata.create_all(bind=engine)
 class JourneyCreate(BaseModel):
     name: str
     description: str
-    ai_response: Optional[str] = None
+    ai_response: Optional[Text] = None
 
 class JourneyResponse(JourneyCreate):
     id: str
-    name: str
-    description: str
-    ai_response: Optional[str] = None 
 
 # Dépendance pour obtenir une session de base de données
 def get_db():
