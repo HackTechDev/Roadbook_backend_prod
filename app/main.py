@@ -48,7 +48,7 @@ class JourneyResponse(JourneyCreate):
     id: str
     name: str
     description: str
-    ai_response: str | None = None
+    ai_response: Optional[str] = None 
 
 
 # Dépendance pour obtenir une session de base de données
