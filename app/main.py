@@ -43,6 +43,7 @@ Base.metadata.create_all(bind=engine)
 class JourneyCreate(BaseModel):
     name: str
     description: str
+    ai_response: str
 
 class JourneyResponse(JourneyCreate):
     id: str
