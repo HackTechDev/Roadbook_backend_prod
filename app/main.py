@@ -10,7 +10,6 @@ from typing import Optional
 import os
 import uuid
 
-
 load_dotenv()  # Charge les variables depuis .env
 
 # Initialisation du client Mistral avec la clé API
@@ -20,7 +19,6 @@ if not api_key:
 
 client = Mistral(api_key=api_key)
 model = "mistral-large-latest"
-
 
 # Configuration de la base de données
 DATABASE_URL = "sqlite:///./roadbook.db"
@@ -34,7 +32,7 @@ class Journey(Base):
     id = Column(String, primary_key=True, index=True, default=lambda: str(uuid.uuid4()))
     name = Column(String, index=True)
     description = Column(Text)
-    ai_response = Column(Text)  # Nouveau champ pour stocker la réponse IA
+    ai_response = Column(Text) 
 
 # Création des tables
 Base.metadata.create_all(bind=engine)
@@ -50,7 +48,6 @@ class JourneyResponse(JourneyCreate):
     name: str
     description: str
     ai_response: Optional[str] = None 
-
 
 # Dépendance pour obtenir une session de base de données
 def get_db():
